@@ -1,0 +1,9 @@
+.result-poster {
+    float: left;
+    max-width: 60px;
+    margin-right: 10px;
+
+    &.details {
+        max-width: 100px;
+    }
+}
