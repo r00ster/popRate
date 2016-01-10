@@ -37,6 +37,6 @@ Run `ionic serve` from inside the popRate directory.
 ## To Dos:
 
 * Add connection timeout when API is not accessible 
-* App Icon and Splashcreen
+* App icon and splashcreen
 * Set weight in average equation for each rating site
-* Style to dark theme and more anitmations
+* Style to dark theme and more animations
