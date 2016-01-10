@@ -1,4 +1,4 @@
-angular.module('popRateApp', ['ionic','ionic.service.core', 'popRateApp.controllers', 'popRateApp.services', 'ngPercentDisplay'])
+var popRateApp = angular.module('popRateApp', ['ionic','ionic.service.core', 'ngPercentDisplay'])
 
 .run(function($ionicPlatform, $localstorage) {
     $ionicPlatform.ready(function() {

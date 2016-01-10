@@ -1,31 +1,4 @@
-angular.module('popRateApp.controllers', [])
-
-.controller('ResultsCtrl', function($scope, Results, $ionicLoading) {
-    $scope.results = [];
-
-    var show = function() {
-        $scope.loading = $ionicLoading.show({
-            content: 'Loading',
-            animation: 'fade-in',
-            showBackdrop: true,
-            maxWidth: 200
-        });
-    };
-
-    var hide = function() {
-        $scope.loading.hide();
-    };
-
-    $scope.search = function(searchTerm) {
-        show();
-        Results.search(searchTerm).success(function(result) {
-            hide();
-            $scope.results = result.Search;
-        });
-    };
-})
-
-.controller('ResultDetailCtrl', function($scope, $stateParams, Results, $ionicLoading, $localstorage) {
+popRateApp.controller('ResultDetailCtrl', function($scope, $stateParams, Results, $ionicLoading, $localstorage) {
     var getAverage = function(IMDB, metacritic, rottenTomatoes) {
         var amount = 0;
         var ratingSum = 0;
@@ -90,23 +63,5 @@ angular.module('popRateApp.controllers', [])
             $scope.result = result;
         });
     });
-})
-
-.controller('AccountCtrl', function($scope, $localstorage) {
-    $scope.$on('$ionicView.enter', function() {
-        if ($localstorage.get('settings') !== undefined) {
-            $scope.settings = $localstorage.getObject('settings');
-        } else {
-            $scope.settings = {
-                IMDB: true,
-                metacritic: true,
-                rottenTomatoes: true
-            };
-            $localstorage.setObject('settings', $scope.settings);
-        }
-    });
-
-    $scope.saveSettings = function() {
-        $localstorage.setObject('settings', $scope.settings);
-    };
 });
+
