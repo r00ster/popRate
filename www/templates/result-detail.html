@@ -1,0 +1,46 @@
+<ion-view view-title="Details">
+  <ion-content class="padding">
+    <div class="list card">
+        <div class="item">
+            <div class="row">
+                <div class="col col-75">
+                    <h2>{{ result.Title }}</h2>
+                    <p><strong>Average rating:</strong> {{ rating.average }}<span ng-if="rating.average !== 'N/A'">%</span><br/>
+                    <strong>Released:</strong> {{ result.Released }}<br/>
+                    <strong>Genre:</strong> {{ result.Genre }}</p>
+                </div>
+                <div class="col">
+                    <percent-display percent="rating.average" side="70" colors="#666 #4db53c" class="float-right" ng-if="rating.average !== 'N/A'"></percent-display>
+                </div>
+            </div>
+        </div>
+
+        <div class="item item-body">
+            <img class="result-poster details" src="{{ result.Poster }}" placeholder="img/placeholder.png" >
+            <p class="no-top-margin"><strong>Actors:</strong> {{ result.Actors }}<br/>
+            <strong>Awards:</strong> {{ result.Awards }}<br/>
+            <strong>Director:</strong> {{ result.Director }}<br/>
+            <strong>Runtime:</strong> {{ result.Runtime }}</p>
+            <p><strong>Plot:</strong> {{ result.Plot }}</p>
+        </div>
+
+        <div class="item tabs tabs-secondary tabs-icon-left">
+            <span class="tab-item">
+                <i class="icon" ng-class="rating.includesIMDB ? 'ion-checkmark balanced' : 'ion-close assertive'"></i>
+                IMDB
+                <span ng-if="!available.IMDB">(N/A)</span>
+            </span>
+            <span class="tab-item">
+                <i class="icon" ng-class="rating.includesMetacritic ? 'ion-checkmark balanced' : 'ion-close assertive'"></i>
+                Metacritic
+                <span ng-if="!available.metacritic">(N/A)</span>
+            </span>
+            <span class="tab-item">
+                <i class="icon" ng-class="rating.includesRottenTomatoes ? 'ion-checkmark balanced' : 'ion-close assertive'"></i>
+                Rotten T
+                <span ng-if="!available.rottenTomatoes">(N/A)</span>
+            </span>
+        </div>
+    </div>
+  </ion-content>
+</ion-view>

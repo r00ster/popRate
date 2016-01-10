@@ -1,0 +1,21 @@
+<ion-view view-title="Search">
+  <ion-header-bar class="bar bar-subheader bar-header search-bar">
+    <form ng-submit="search(searchTerm)" >
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Movie, Series, Game, etc." ng-model="searchTerm">
+      </label>
+    </form>
+  </ion-header-bar>
+  <ion-content class="has-subheader has-search-bar">
+    <ionlist>
+      <ion-item class="item-remove-animate item-icon-right" ng-repeat="result in results" type="item-text-wrap" href="#/tab/results/{{result.imdbID}}">
+        <img src="{{result.Poster}}" placeholder="img/placeholder.png" class="result-poster">
+        <h2>{{result.Title}}</h2>
+        <p><strong>Year:</strong> {{result.Year}}<br/>
+        <strong>Type:</strong> {{ result.Type }}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

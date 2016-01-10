@@ -1,0 +1,10 @@
+<ion-view view-title="Settings">
+  <ion-content>
+    <div class="item item-divider">Rating sites included in average:</div>
+    <ion-list>
+    <ion-toggle ng-model="settings.IMDB" ng-change="saveSettings()">IMDB</ion-toggle>
+    <ion-toggle ng-model="settings.metacritic" ng-change="saveSettings()">Metacritic</ion-toggle>
+    <ion-toggle ng-model="settings.rottenTomatoes" ng-change="saveSettings()">Rotten Tomatoes</ion-toggle>
+    </ion-list>
+  </ion-content>
+</ion-view>
