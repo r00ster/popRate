@@ -11,21 +11,24 @@ Simple application that returns the average rating (IMDB + Metacritic + Rotten T
 
 In the terminal inside the popRate dir:
 
-*iOS:*
+**iOS:**
 
 Plug in an iOS device and run the following:
-
-`ionic platform add ios
+```
+ionic platform add ios
 ionic build ios
-ionic emulate ios`
+ionic emulate ios
+```
 
-*Android:*
+**Android:**
 
 Plug in an Android device and run the following:
 
-`ionic platform add android 
+```
+ionic platform add android 
 ionic build android
 ionic emulate android`
+```
 
 ## Test in browser
 
