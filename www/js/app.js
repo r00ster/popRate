@@ -12,7 +12,6 @@ var popRateApp = angular.module('popRateApp', ['ionic','ionic.service.core', 'ng
             // org.apache.cordova.statusbar required
             StatusBar.styleDefault();
         }
-        ionic.Platform.fullScreen();
     });
 })
 
