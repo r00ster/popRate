@@ -7,6 +7,11 @@ Simple application that returns the average rating (IMDB + Metacritic + Rotten T
 * Node - https://nodejs.org/en/
 * Ionic - http://ionicframework.com/getting-started/
 
+* Gulp
+```
+npm install gulp
+```
+
 ## How to run application
 
 In the terminal inside the popRate dir:
