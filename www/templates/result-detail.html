@@ -5,12 +5,12 @@
             <div class="row">
                 <div class="col col-75">
                     <h2>{{ result.Title }}</h2>
-                    <p><strong>Average rating:</strong> {{ rating.average }}<span ng-if="rating.average !== 'N/A'">%</span><br/>
+                    <p><strong>Average rating:</strong> {{ rating.average }}<span ng-if="showRatingCircle">%</span><br/>
                     <strong>Released:</strong> {{ result.Released }}<br/>
                     <strong>Genre:</strong> {{ result.Genre }}</p>
                 </div>
                 <div class="col">
-                    <percent-display percent="rating.average" side="70" colors="#666 #4db53c" class="float-right" ng-if="rating.average !== 'N/A'"></percent-display>
+                    <percent-display percent="rating.average" side="70" colors="#666 #4db53c" class="float-right" ng-if="showRatingCircle"></percent-display>
                 </div>
             </div>
         </div>

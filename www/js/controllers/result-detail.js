@@ -1,7 +1,6 @@
 popRateApp.controller('ResultDetailCtrl', function($scope, $stateParams, Results, $ionicLoading, $localstorage) {
     var getAverage = function(IMDB, metacritic, rottenTomatoes) {
-        var amount = 0;
-        var ratingSum = 0;
+        var amount = 0, ratingSum = 0, averageRating = 0;
         var includesIMDB, includesMetacritic, includesRottenTomatoes = false;
         var settings = $localstorage.getObject('settings');
 
@@ -39,7 +38,13 @@ popRateApp.controller('ResultDetailCtrl', function($scope, $stateParams, Results
             }
         }
 
-        var averageRating = ratingSum === 0 ? 'N/A' : (ratingSum / amount).toFixed();
+        if(ratingSum === 0) {
+            $scope.showRatingCircle = false;
+            averageRating = 'N/A'
+        } else {
+            $scope.showRatingCircle = true;
+            averageRating = (ratingSum / amount).toFixed();
+        }
 
         return {
             'average': averageRating,
