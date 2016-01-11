@@ -27,7 +27,7 @@ Plug in an Android device and run the following:
 ```
 ionic platform add android 
 ionic build android
-ionic emulate android`
+ionic emulate android
 ```
 
 ## Test in browser
@@ -40,3 +40,4 @@ Run `ionic serve` from inside the popRate directory.
 * App icon and splashcreen
 * Set weight in average equation for each rating site
 * Style to dark theme and more animations
+* Move search input box to header (i.e. Twitter mobile app)
