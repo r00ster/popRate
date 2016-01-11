@@ -1,6 +1,6 @@
 {
-  "name": "poprate",
-  "app_id": "16c372fd",
+  "name": "popRate",
+  "app_id": "d0d982d0",
   "gulpStartupTasks": [
     "sass",
     "watch"

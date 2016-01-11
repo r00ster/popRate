@@ -18,7 +18,8 @@ In the terminal inside the popRate dir:
 
 **iOS:**
 
-Plug in an iOS device and run the following:
+Run the following to test in emulator:
+
 ```
 ionic platform add ios
 ionic build ios
@@ -27,7 +28,7 @@ ionic emulate ios
 
 **Android:**
 
-Plug in an Android device and run the following:
+Run the following to test in emulator:
 
 ```
 ionic platform add android 
