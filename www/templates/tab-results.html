@@ -9,7 +9,7 @@
   </ion-header-bar>
   <ion-content class="has-subheader has-search-bar">
     <ionlist>
-      <ion-item class="item-remove-animate item-icon-right" ng-repeat="result in results" type="item-text-wrap" href="#/tab/results/{{result.imdbID}}">
+      <ion-item class="item-remove-animate item-icon-right" ng-repeat="result in results" type="item-text-wrap" ng-href="#/tab/results/{{result.imdbID}}">
         <img src="{{result.Poster}}" placeholder="img/placeholder.png" class="result-poster">
         <h2>{{result.Title}}</h2>
         <p><strong>Year:</strong> {{result.Year}}<br/>
