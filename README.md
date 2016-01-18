@@ -46,4 +46,5 @@ Run `ionic serve` from inside the popRate directory.
 * Set weight in average equation for each rating site
 * Style to dark theme and more animations
 * Move search input box to header (i.e. Twitter mobile app)
+
 ~~App icon and splashcreen~~
