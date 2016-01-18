@@ -1,0 +1,17 @@
+.popup-container {
+    &.custom-popup {
+        .popup {
+            .popup-buttons {
+                .button {
+                    &.button-positive {
+                        background-color: $green;
+                    }
+                }
+            }
+
+            .popup-body {
+                text-align: center;
+            }
+        }
+    }
+}

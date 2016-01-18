@@ -1,8 +1,9 @@
-popRateApp.controller('ResultDetailCtrl', function($scope, $stateParams, Results, $ionicLoading, $localstorage) {
+popRateApp.controller('ResultDetailCtrl', function($scope, $stateParams, Results, $ionicLoading, $localstorage, $ionicPopup, $location) {
     var getAverage = function(IMDB, metacritic, rottenTomatoes) {
         var amount = 0, ratingSum = 0, averageRating = 0;
         var includesIMDB, includesMetacritic, includesRottenTomatoes = false;
         var settings = $localstorage.getObject('settings');
+        $scope.detailsLoaded = false;
 
         $scope.available = {
             IMDB: true,
@@ -54,6 +55,21 @@ popRateApp.controller('ResultDetailCtrl', function($scope, $stateParams, Results
         };
     };
 
+    var resultId = $stateParams.resultId;
+
+    var getDetails = function(resultId) {
+        Results.get(resultId).then(function(response) {
+            $ionicLoading.hide();
+            var result = response.data;
+            $scope.rating = getAverage(result.imdbRating, result.Metascore, result.tomatoMeter);
+            $scope.result = result;
+            $scope.detailsLoaded = true;
+        }, function(error) {
+            $ionicLoading.hide();
+            $scope.showConfirm(resultId);
+        });
+    };
+
     $scope.$on('$ionicView.enter', function() {
         $ionicLoading.show({
             content: 'Loading',
@@ -61,12 +77,25 @@ popRateApp.controller('ResultDetailCtrl', function($scope, $stateParams, Results
             showBackdrop: true,
             maxWidth: 200
         });
-
-        Results.get($stateParams.resultId).success(function(result) {
-            $ionicLoading.hide();
-            $scope.rating = getAverage(result.imdbRating, result.Metascore, result.tomatoMeter);
-            $scope.result = result;
-        });
+        
+        getDetails(resultId);
     });
+
+    $scope.showConfirm = function(resultId) {
+        var confirmPopup = $ionicPopup.confirm({
+            title: 'Retry',
+            template: 'Connection failure. Retry?',
+            okText: 'Yes',
+            cssClass: 'custom-popup'
+        });
+
+        confirmPopup.then(function(res) {
+            if(res) {
+                getDetails(resultId);
+            } else {
+                $location.path('/');
+            }
+        });
+    };
 });
 

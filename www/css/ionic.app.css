@@ -9732,6 +9732,12 @@ a.button {
 .float-right {
   float: right !important; }
 
+.popup-container.custom-popup .popup .popup-buttons .button.button-positive {
+  background-color: #4db53c; }
+
+.popup-container.custom-popup .popup .popup-body {
+  text-align: center; }
+
 .search-bar {
   height: 56px; }
 

@@ -1,2 +1,6 @@
-$balanced:                        #4db53c !default;
+// Custom styles
+$green:                           #4db53c !default;
+
+// Ionic overrides
+$balanced:                        $green;
 $dark:                            #666 !default;
